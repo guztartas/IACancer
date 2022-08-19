@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+<html>
+
+<body>
+    <p>Segundo a IA: <b>{{result.get("class")}}</b></p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Tipo de lesão</th>
+                <th scope="col">Chance de ser</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in range(0, 7)%}
+            <tr>
+                <th scope="row">{{result.get("probs")[i][0]}}</th>
+                <td>{{result.get("probs")[i][1]}}</td>
+
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+</body>
+<figure class="figure">
+    <img src="data:image/png;base64, {{result.get(" image ")}}" class="figure-img img-thumbnail input-image">
+</figure>
+
+</html>
+
+{% endblock %}
