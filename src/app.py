@@ -15,7 +15,7 @@ from PIL import Image as PILImage
 app = Flask(__name__)
 
 NAME_OF_FILE = 'model_best'
-PATH_TO_MODELS_DIR = Path('') # /models 
+PATH_TO_MODELS_DIR = Path('..') # /models 
 classes = ['Ceratose actínica', 'Carcinoma basocelular', 'Ceratose benigna',
            'Dermatofibroma', 'Nevo melanocítico (pinta ou beleza)', 'Melanoma', 'Lesões vasculares']
 
