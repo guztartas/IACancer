@@ -16,17 +16,17 @@ app = Flask(__name__)
 
 NAME_OF_FILE = 'model_best'
 PATH_TO_MODELS_DIR = Path('') # /models 
-classes = ['Ceratose actínica', 'Carcinoma basocelular', 'Ceratose benigna',
+CLASSES = ['Ceratose actínica', 'Carcinoma basocelular', 'Ceratose benigna',
            'Dermatofibroma', 'Nevo melanocítico (pinta ou beleza)', 'Melanoma', 'Lesões vasculares']
 
-def setup_model_pth(path_to_pth_file, learner_name_to_load, classes):
+def setup_model_pth(path_to_file, to_load, classes):
     data = ImageDataBunch.single_from_classes(
-        path_to_pth_file, classes, ds_tfms=get_transforms(), size=224).normalize(imagenet_stats)
+        path_to_file, classes, ds_tfms=get_transforms(), size=224).normalize(imagenet_stats)
     learn = cnn_learner(data, models.densenet169, model_dir='models')
-    learn.load(learner_name_to_load, device=torch.device('cpu'))
+    learn.load(to_load, device=torch.device('cpu'))
     return learn
 
-learn = setup_model_pth(PATH_TO_MODELS_DIR, NAME_OF_FILE, classes)
+learn = setup_model_pth(PATH_TO_MODELS_DIR, NAME_OF_FILE, CLASSES)
 
 def encode(img):
     img = (image2np(img.data) * 255).astype('uint8')
