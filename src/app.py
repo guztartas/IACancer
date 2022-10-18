@@ -1,7 +1,6 @@
 from __future__ import division, print_function
 import sys
 import os
-from pathlib import Path
 from io import BytesIO
 import base64
 import requests
@@ -12,12 +11,10 @@ from fastai.vision import *
 from flask import Flask, render_template, request
 from PIL import Image as PILImage
 
-app = Flask(__name__)
+import config 
+#variables
 
-NAME_OF_FILE = 'model_best'
-PATH_TO_MODELS_DIR = Path('') # /models 
-CLASSES = ['Ceratose actínica', 'Carcinoma basocelular', 'Ceratose benigna',
-           'Dermatofibroma', 'Nevo melanocítico (pinta ou beleza)', 'Melanoma', 'Lesões vasculares']
+app = Flask(__name__)
 
 def setup_model_pth(path_to_file, to_load, classes):
     data = ImageDataBunch.single_from_classes(
@@ -26,7 +23,7 @@ def setup_model_pth(path_to_file, to_load, classes):
     learn.load(to_load, device=torch.device('cpu'))
     return learn
 
-learn = setup_model_pth(PATH_TO_MODELS_DIR, NAME_OF_FILE, CLASSES)
+learn = setup_model_pth(config.path_to_model, config.name_model, config.classes)
 
 def encode(img):
     img = (image2np(img.data) * 255).astype('uint8')
@@ -76,7 +73,7 @@ def classify_url():
     
 
 if __name__ == '__main__':
-    port = os.environ.get('PORT', 8008)
+    port = os.environ.get('PORT', config.port)
 
     if "prepare" not in sys.argv:
         app.run(debug=False, host='0.0.0.0', port=port)
