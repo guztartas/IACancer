@@ -2,11 +2,23 @@
 <html>
 
 <body>
-    <p class="result" style="width: max-content; margin: auto;">Segundo a nossa inteligência artificial, o tipo de lesão da imagem abaixo é: <b>{{result.get("class")}}</b></p>
+    <p class="result" style="text-align: center;">Segundo a nossa inteligência artificial, o tipo de lesão da imagem abaixo é: <b>{{result.get("class")}}</b></p>
 </body>
 <figure class="figure" style="width: auto; margin: 24px 33%;">
     <img src="data:image/png;base64, {{result.image}}" class="figure-img img-thumbnail input-image">
 </figure>
+<div class="container" style="padding: 0; max-width: 355px; margin-top: 50px">
+    <div class="list-group">
+        <a href="https://www.gov.br/saude/pt-br/assuntos/noticias/2020/dezembro/cancer-de-pele-saiba-como-prevenir-diagnosticar-e-tratar#:~:text=Evitar%20exposi%C3%A7%C3%A3o%20prolongada%20ao%20sol,de%20prote%C3%A7%C3%A3o%2030%2C%20no%20m%C3%ADnimo." target="_blank "
+            class="list-group-item list-group-item-action flex-column align-items-start active ">
+            <div class="d-flex w-100 justify-content-between ">
+                <h5 class="mb-1 ">Câncer de pele</h5>
+                <small>Clique para ver a fonte</small>
+            </div>
+            <p class="mb-1 ">Saiba como prevenir, diagnosticar e tratar.</small>
+        </a>
+    </div>
+</div>
 
 </html>
 
