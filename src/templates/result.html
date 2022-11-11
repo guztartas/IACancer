@@ -2,20 +2,90 @@
 <html>
 
 <body>
-    <p class="result" style="text-align: center;">Segundo a nossa inteligência artificial, o tipo de lesão da imagem abaixo é: <b>{{result.get("class")}}</b></p>
+    <p class="result" style="text-align: center;">Segundo a nossa inteligência artificial, o tipo de lesão da imagem abaixo é: <b id="result">{{result.get("class")}}</b></p>
 </body>
+<div class="container" style="margin-top: 24px; text-align: center;">
+    <div class="list-group">
+        <a href="https://www.gov.br/saude/pt-br/assuntos/noticias/2020/dezembro/cancer-de-pele-saiba-como-prevenir-diagnosticar-e-tratar#:~:text=Evitar%20exposi%C3%A7%C3%A3o%20prolongada%20ao%20sol,de%20prote%C3%A7%C3%A3o%2030%2C%20no%20m%C3%ADnimo." target="_blank ">
+            <p class="mb-1 ">Saiba como prevenir, diagnosticar e tratar.</small>
+        </a>
+    </div>
+</div>
 <figure class="figure" style="width: auto; margin: 24px 33%;">
     <img src="data:image/png;base64, {{result.image}}" class="figure-img img-thumbnail input-image">
 </figure>
-<div class="container" style="padding: 0; max-width: 355px; margin-top: 50px">
-    <div class="list-group">
-        <a href="https://www.gov.br/saude/pt-br/assuntos/noticias/2020/dezembro/cancer-de-pele-saiba-como-prevenir-diagnosticar-e-tratar#:~:text=Evitar%20exposi%C3%A7%C3%A3o%20prolongada%20ao%20sol,de%20prote%C3%A7%C3%A3o%2030%2C%20no%20m%C3%ADnimo." target="_blank "
-            class="list-group-item list-group-item-action flex-column align-items-start active ">
+
+<div class="container" style="padding: 0;">
+    <div class="list-group Ceratoseactínica" style="display: none;">
+        <a href="https://www.rededorsaoluiz.com.br/doencas/ceratose-actinica" target="_blank " class="list-group-item list-group-item-action flex-column align-items-start active ">
             <div class="d-flex w-100 justify-content-between ">
-                <h5 class="mb-1 ">Câncer de pele</h5>
+                <h5 class="mb-1 ">Ceratose actínica</h5>
                 <small>Clique para ver a fonte</small>
             </div>
-            <p class="mb-1 ">Saiba como prevenir, diagnosticar e tratar.</small>
+            <p class="mb-1 ">Ceratose actínica, queratose solar ou mesmo queratose actínica é uma lesão que acomete a pele, podendo ser considerada pré-cancerígena e que precisa ser submetida a procedimento para remoção pelo dermatologista. É uma lesão típica em indivíduos
+                de pele mais clara, loiros, ruivos, etc.</small>
+        </a>
+    </div>
+    <div class="list-group Carcinomabasocelular" style="display: none;">
+        <a href="https://www.rededorsaoluiz.com.br/doencas/carcinoma-basocelular" target="_blank " class="list-group-item list-group-item-action flex-column align-items-start active ">
+            <div class="d-flex w-100 justify-content-between ">
+                <h5 class="mb-1 ">Carcinoma basocelular</h5>
+                <small>Clique para ver a fonte</small>
+            </div>
+            <p class="mb-1 ">O carcinoma basocelular é o tipo de câncer de pele mais comum, mas o menos agressivo. Trata-se de um tumor constituído de células basais, comuns da pele. Essas células se multiplicam de forma desordenada, dando origem ao tumor. </small>
+        </a>
+    </div>
+    <div class="list-group Ceratosebenigna" style="display: none;">
+        <a href="https://www.sbd.org.br/doencas/ceratose/#:~:text=Ceratose%20Seborreica%3A%20%C3%A9%20uma%20les%C3%A3o,pode%20crescer%20se%20tornando%20volumosa." target="_blank " class="list-group-item list-group-item-action flex-column align-items-start active ">
+            <div class="d-flex w-100 justify-content-between ">
+                <h5 class="mb-1 ">Ceratose benigna</h5>
+                <small>Clique para ver a fonte</small>
+            </div>
+            <p class="mb-1 ">
+                É uma lesão benigna da pele, geralmente arredondada ou irregular, de coloração acastanhada, amarronzada ou negra, e de aspecto verrucoso. Aparece principalmente na face e tronco e pode crescer se tornando volumosa.
+                </small>
+        </a>
+    </div>
+    <div class="list-group Melanoma" style="display: none;">
+        <a href="https://www.msdmanuals.com/pt-br/casa/dist%C3%BArbios-da-pele/c%C3%A2nceres-de-pele/melanoma#:~:text=O%20melanoma%20%C3%A9%20um%20c%C3%A2ncer,pigmento%20da%20pele%20(melan%C3%B3citos).&text=j%C3%A1%20existentes.,caro%C3%A7os%20duros%20pretos%20ou%20cinzentos."
+            target="_blank " class="list-group-item list-group-item-action flex-column align-items-start active ">
+            <div class="d-flex w-100 justify-content-between ">
+                <h5 class="mb-1 ">Melanoma</h5>
+                <small>Clique para ver a fonte</small>
+            </div>
+            <p class="mb-1 ">O melanoma é um câncer de pele que começa nas células produtoras de pigmento da pele (melanócitos). já existentes. Podem formar placas da pele de cor marrom, irregulares, planas ou salientes, com pontos de cores diferentes, ou caroços duros
+                pretos ou cinzentos.
+                </small>
+        </a>
+    </div>
+    <div class="list-group Dermatofibroma" style="display: none;">
+        <a href="https://www.sbd.org.br/doencas/dermatofibroma/#:~:text=Dermatofibromas%20s%C3%A3o%20les%C3%B5es%20benignas%20t%C3%ADpicas,se%20s%C3%A3o%20pintas%20ou%20sinais." target="_blank " class="list-group-item list-group-item-action flex-column align-items-start active ">
+            <div class="d-flex w-100 justify-content-between ">
+                <h5 class="mb-1 ">Dermatofibroma</h5>
+                <small>Clique para ver a fonte</small>
+            </div>
+            <p class="mb-1 ">Dermatofibromas são lesões benignas típicas de extremidades, como braços, antebraços e pernas. Por terem coloração acastanhada, geralmente, são motivos de consulta, na qual os pacientes buscam saber se são pintas ou sinais.
+                </small>
+        </a>
+    </div>
+    <div class="list-group Nevomelanocítico(pintaoubeleza)" style="display: none;">
+        <a href="https://www.dermaclub.com.br/blog/noticia/pintas-saiba-o-que-sao-os-nevos-como-surgem-na-pele-e-dicas-para-avaliar-a-necessidade-de-remove-los-ou-nao_a331/1" target="_blank " class="list-group-item list-group-item-action flex-column align-items-start active ">
+            <div class="d-flex w-100 justify-content-between ">
+                <h5 class="mb-1 ">Nevo melanocítico (pinta ou beleza)</h5>
+                <small>Clique para ver a fonte</small>
+            </div>
+            <p class="mb-1 ">As famosas pintas são cientificamente chamadas de nevos melanocíticos
+                </small>
+        </a>
+    </div>
+    <div class="list-group Lesõesvasculares" style="display: none;">
+        <a href="https://sanfranciscodayhospital.com.br/lesoes-vasculares/#:~:text=O%20que%20%C3%A9%3F,tonalidade%20rosa%2C%20vermelha%20e%20p%C3%BArpura." target="_blank " class="list-group-item list-group-item-action flex-column align-items-start active ">
+            <div class="d-flex w-100 justify-content-between ">
+                <h5 class="mb-1 ">Lesões vasculares</h5>
+                <small>Clique para ver a fonte</small>
+            </div>
+            <p class="mb-1 ">Manchas “vinho do porto”, hemangiomas, telangiectasias, angiomas (face) e varicoses (pernas) são constituídas por uma rede de vasos sanguíneos que deixam a superfície da pele na tonalidade rosa, vermelha e púrpura.
+                </small>
         </a>
     </div>
 </div>

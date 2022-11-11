@@ -9,7 +9,7 @@ port = 8008
 
 def config(name_model, path_to_model, classes, port):
     name_model = name_model
-    path_to_model = path_to_modelmodels 
+    path_to_model = path_to_model
     classes = classes
     port = port
     return name_model, path_to_model, classes, port

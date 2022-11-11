@@ -1,9 +1,9 @@
 {% extends "base.html" %} {% block content %}
 
-<h1>IA Câncer</h1>
+<h1>Inteligência Artificial para o auxílio no diagnóstico de câncer</h1>
 <p class="comment">Descubra se a lesão de pele é malígna ou não.</p>
 <dive class="col-xs-6">
-    <form action="/upload" id="upload-file" method="post" enctype="multipart/form-data">
+    <form action="/upload" id="upload-file" method="post" enctype="multipart/form-data" style="margin-top: 40px;">
         <p class="comment">Selecione a imagem para carregar e envie para o teste.</p>
         <div class="custom-file">
             <input type="file" class="custom-file-input" name="file" id="customFile">
@@ -17,9 +17,9 @@
 
     <h5 class="comment">Ou</h5>
     <p class="comment">Insira o URL da imagem e envie</p>
-    <form action="/classify-url" id="submit-url" method="post">
+    <form action="/classify-url" id="submit-url" method="post" style="margin-bottom: 50px;">
         <div class="col-xs-4">
-            <input type="url" class="form-control" name="url" id="url-input" placeholder="Enter image URL">
+            <input type="url" class="form-control" name="url" id="url-input" style="max-width: 450px;" placeholder="Insira uma URL">
         </div>
         <div>
             <input type="submit" style="background: #23a6ab; border-color: #197174; margin-top: 16px;" class="btn btn-success" value="Enviar para teste por link">

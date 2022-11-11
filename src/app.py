@@ -44,7 +44,6 @@ def model_predict(img):
 	
     img_data = encode(img)
     result = {"class":pred_class, "probs":pred_probs, "image":img_data}
-    print(result)
     return render_template('result.html', result=result)
    
 

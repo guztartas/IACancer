@@ -18,4 +18,15 @@ $(document).ready(function() {
             alert("Insira uma imagem antes de fazer o teste");
         }
     });
+
+
+    let set = setInterval(function() {
+        let result = $('#result')[0].innerText.replace(/\s/g, '');
+        console.log(result);
+        if (result) {
+            $('.' + result).fadeIn();
+            clearInterval(set);
+        }
+    }, 25);
+
 });
